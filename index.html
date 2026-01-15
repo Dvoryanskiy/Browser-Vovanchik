@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovanium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="browser-container">
+        <!-- Панель инструментов -->
+        <div class="toolbar">
+            <div class="nav-buttons">
+                <button id="backBtn" class="nav-btn" title="Назад">←</button>
+                <button id="forwardBtn" class="nav-btn" title="Вперед">→</button>
+                <button id="reloadBtn" class="nav-btn" title="Обновить">⟳</button>
+            </div>
+            
+            <div class="address-bar-container">
+                <input type="text" id="addressBar" class="address-bar" placeholder="Введите URL или поисковый запрос">
+                <button id="goBtn" class="go-btn">Перейти</button>
+            </div>
+            
+            <div class="toolbar-actions">
+                <button id="assistantBtn" class="toolbar-btn assistant-btn" title="Вованчик - AI помощник">
+                    <span class="assistant-icon">🤖</span>
+                </button>
+                <button id="newTabBtn" class="toolbar-btn" title="Новая вкладка">+</button>
+            </div>
+        </div>
+
+        <!-- Вкладки -->
+        <div class="tabs-container" id="tabsContainer">
+            <!-- Вкладки создаются динамически через JavaScript -->
+        </div>
+
+        <!-- Контейнер для веб-контента -->
+        <div class="content-container">
+            <!-- Webview создаются динамически через JavaScript -->
+        </div>
+
+        <!-- AI Ассистент "Вованчик" -->
+        <div id="assistantPanel" class="assistant-panel">
+            <div class="assistant-header">
+                <div class="assistant-title">
+                    <span class="assistant-avatar">🤖</span>
+                    <span>Вованчик</span>
+                    <span class="assistant-status">●</span>
+                </div>
+                <button id="closeAssistantBtn" class="close-assistant-btn" title="Закрыть">×</button>
+            </div>
+            <div id="assistantMessages" class="assistant-messages">
+                <div class="message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text">Привет! Я Вованчик, твой AI помощник. Чем могу помочь?</div>
+                        <div class="message-time">Только что</div>
+                    </div>
+                </div>
+            </div>
+            <div class="assistant-input-container">
+                <input type="text" id="assistantInput" class="assistant-input" placeholder="Спроси меня что-нибудь..." />
+                <button id="sendMessageBtn" class="send-message-btn" title="Отправить">
+                    <span>➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
