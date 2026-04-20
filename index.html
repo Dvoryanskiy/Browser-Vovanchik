@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovanium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="toolbar">
+            <div class="toolbar-left">
+                <button id="backBtn" class="btn" title="Назад">←</button>
+                <button id="forwardBtn" class="btn" title="Вперед">→</button>
+                <button id="reloadBtn" class="btn" title="Обновить">⟳</button>
+            </div>
+            <div class="toolbar-center">
+                <input id="addressBar" class="address-input" type="text" placeholder="Введите URL или запрос">
+                <button id="goBtn" class="btn primary">Перейти</button>
+            </div>
+            <div class="toolbar-right">
+                <button id="assistantBtn" class="btn" title="AI ассистент">🤖</button>
+                <button id="newTabBtn" class="btn" title="Новая вкладка">+</button>
+            </div>
+        </header>
+
+        <div id="tabsContainer" class="tabs"></div>
+        <main id="webviewContainer" class="webview-container"></main>
+    </div>
+
+    <aside id="assistantPanel" class="assistant-panel">
+        <div class="assistant-header">
+            <strong>AI ассистент</strong>
+            <button id="closeAssistantBtn" class="btn">×</button>
+        </div>
+
+        <div class="assistant-settings">
+            <select id="assistantProvider" class="field">
+                <option value="deepseek">DeepSeek</option>
+                <option value="custom">Custom (OpenAI-compatible)</option>
+            </select>
+            <input id="assistantApiUrl" class="field" type="text" placeholder="API URL">
+            <input id="assistantModel" class="field" type="text" placeholder="Model">
+            <input id="assistantApiKey" class="field" type="password" placeholder="API key">
+            <button id="saveApiSettingsBtn" class="btn primary">Сохранить</button>
+        </div>
+
+        <div id="assistantMessages" class="assistant-messages">
+            <div class="msg assistant">Привет. Я готов отвечать через выбранный API.</div>
+        </div>
+
+        <div class="assistant-input-wrap">
+            <input id="assistantInput" class="field" type="text" placeholder="Введите сообщение">
+            <button id="sendMessageBtn" class="btn primary">Отправить</button>
+        </div>
+    </aside>
+
+    <script src="app.js"></script>
+</body>
+</html>
